@@ -1,0 +1,13 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}"
+    ],
+    "clangd.arguments": [
+        "--pretty",
+        "--compile-commands-dir=build/app",
+        "--background-index",
+        "--log=error",
+        "--header-insertion=never",
+        "--query-driver=/usr/bin/arm-none-eabi-g*",
+    ],
+}

@@ -1,0 +1,2 @@
+config BOARD_GOODBYTE_DEMO
+    select SOC_NRF52832_QFAA

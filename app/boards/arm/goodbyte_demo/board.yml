@@ -1,0 +1,5 @@
+board:
+  name: goodbyte_demo
+  vendor: arm
+  socs:
+  - name: nrf52832

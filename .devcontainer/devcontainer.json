@@ -1,0 +1,39 @@
+{
+    "image": "ubuntu:22.04",
+    "name": "zephyr",
+    "remoteUser": "dev",
+    "forwardPorts": [
+        8001
+    ],
+    "features": {
+        "ghcr.io/goodbyte-software/goodbyte-features/ncs-toolchain:latest": {
+            "version": "0.16.8",
+            "architecture": "arm"
+        },
+        "ghcr.io/goodbyte-software/goodbyte-features/codechecker:latest": {},
+        "ghcr.io/goodbyte-software/goodbyte-features/jlink:latest": {
+            "version": "7.94e"
+        }
+    },
+    "mounts": [
+        "source=.,target=/repo,type=bind",
+        "source=/dev,target=/dev,type=bind"
+    ],
+    "onCreateCommand": "bash -i /repo/.devcontainer/onCreateCommand.sh",
+    "workspaceFolder": "/repo",
+    "remoteEnv": {
+        "LC_ALL": "C"
+    },
+    "shutdownAction": "stopContainer",
+    "runArgs": [
+        "--privileged"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "nordic-semiconductor.nrf-connect-extension-pack",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ]
+        }
+    }
+}
